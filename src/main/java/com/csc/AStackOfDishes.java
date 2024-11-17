@@ -1,19 +1,19 @@
-package src.main.java.com.csc;
+package main.java.com.csc;
 
 public class AStackOfDishes {
     private Dish[] arrDish;
     private int top;
     private int capacity;
 
-    AStackOfDishes(int size){
+    AStackOfDishes(int size) {
         arrDish = new Dish[size];
         capacity = size;
         top = -1;
-    } 
+    }
 
-    public void push(Dish Dish){
+    public void push(Dish dish) {
         if (!isFull()) {
-            arrDish[++top] = Dish;
+            arrDish[++top] = dish;
         } else {
             System.out.println("Overflow! Stack is full! Not pushing!");
         }
@@ -48,7 +48,7 @@ public class AStackOfDishes {
     public Boolean isEmpty() {
         return top == -1;
     }
-    
+
     public static class Dish {
         public String description;
 
@@ -65,21 +65,28 @@ public class AStackOfDishes {
         Dish redDish = new Dish("A dish with a red fish pattern on it");
         Dish blueDish = new Dish("A dish with a blue fish pattern on it");
 
-        int stackSize = stack.size();
-
         stack.push(oneDish);
         stack.push(twoDish);
         stack.push(redDish);
         stack.push(blueDish);
 
-        int sizeAfterPushes = stack.size();
+        System.out.println("Stack size after pushes: " + stack.size());
 
         Dish peekedDish = stack.peek();
+        if (peekedDish != null) {
+            System.out.println("Top of the stack (peek): " + peekedDish.description);
+        }
 
         Dish poppedDish = stack.pop();
+        if (poppedDish != null) {
+            System.out.println("Popped dish: " + poppedDish.description);
+        }
 
         Dish anotherPoppedDish = stack.pop();
-        
-        int finalSize = stack.size();
+        if (anotherPoppedDish != null) {
+            System.out.println("Popped another dish: " + anotherPoppedDish.description);
+        }
+
+        System.out.println("Final stack size: " + stack.size());
     }
 }
