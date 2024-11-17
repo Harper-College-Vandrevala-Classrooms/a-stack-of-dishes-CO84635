@@ -1,4 +1,4 @@
-package main.java.com.csc;
+package csc;
 
 public class AStackOfDishes {
     private Dish[] arrDish;
