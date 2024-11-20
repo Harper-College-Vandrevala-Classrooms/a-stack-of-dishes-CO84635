@@ -92,7 +92,4 @@ class AStackOfDishesTest {
         assertEquals(5, Dishes.size());
         assertEquals(fiveDish, Dishes.pop());
     }
-
-
-
 }
